@@ -5,94 +5,170 @@ This is carbon cxml.A lightweight dom and obj based framework  render in xml in 
 # Use
 ```HTML
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#317EFB" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="CXML Framework" />
+  <meta name="description" content="CXML Framework Application" />
   
   <title>CXML Framework</title>
+
+  <!-- Manifest JSON -->
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- Favicon (optional) -->
+  <link rel="icon" href="icons/favicon.png" type="image/png" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/beer.css" />
+
+  <!-- Disable text selection -->
   <style>
-  /* Disable text selection only */
-  body {
-    -webkit-user-select: none; /* Safari */
-    -moz-user-select: none;    /* Firefox */
-    -ms-user-select: none;     /* IE/Edge */
-    user-select: none;         /* Standard syntax */
-    /* Keep pointer events enabled for interaction */
-  }
-</style>
+    body {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      background-color: #F7F7F7;
+    }
+  </style>
 
-<script>
-  // Disable context menu (long press/copy-paste menu)
-  document.addEventListener('contextmenu', function(e) {
-    e.preventDefault();
-  });
+  <!-- Disable text/context interaction -->
+  <script>
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+    });
+    document.addEventListener('selectstart', function(e) {
+      e.preventDefault();
+    });
+    document.addEventListener('dblclick', function(e) {
+      e.preventDefault();
+    });
+  </script>
 
-  // Prevent text selection start (drag select)
-  document.addEventListener('selectstart', function(e) {
-    e.preventDefault();
-  });
-
-  // Optional: Disable double-tap to select (common on mobile)
-  document.addEventListener('dblclick', function(e) {
-    e.preventDefault();
-  });
-</script>
-<!--css files-->
+  <!-- Module Scripts -->
+  <script src="css/beer.js" type="module"></script>
 </head>
 <body>
   <div id="app"></div>
 
+  <!-- Application Scripts -->
   <script src="js/cxml.js"></script>
+  <script src="js/config.js"></script>
   <script src="js/carbon.utility.js"></script>
-  <script src="user/appFunction.js"defer></script>
-  <!--js file-->
+  <script src="user/appFunction.js" defer></script>
 </body>
 </html>
+
 ```
 # Use of JS
 app.js example
 ```JAVASCRIPT
-
-function link(obj){
-  const link=`
-  <a href="${obj.link}">
-  ${obj.attrs.text}
-  </a>
-  `
-  return link;
+// example of <name/>
+const userName="xyz";
+const userName_tag=(
+  <b>xyz</b>
+);
+// obj will not start const,let,var others
+//only valid name.do not use any datatype in declar obj variable.below example given.
+db={
+  userName:"xyz",
+  more:{
+    id:12345
+  }
 }
-
-const name = (
-  <div>
-    <button onclick={checkIt}>Check</button>
-    <div style={{
-      fontSize:"20px",
-      borderRadius: "30px",
-      color:"red"
-    }}>
-      Hello from external file!
-    </div>
+const useOfComp_1=(
+  <div class="padding">
+    <h6>Component Example 1</h6>
+    <p>string comp:<userName/></p>
+    
+   <p> tag comp:<userName_tag/></p>
+   <ul>
+     <li>userName:<db.userName/></li>
+     <li>Id:<db.more.id/></li>
+   </ul>
+   
   </div>
 );
-
-const name_2 = (
-  <div>
-   <name/>
-  
-    <button>
-    how are you
-    </button>
-    <br></br>
-    {/*Link Example*/}
-    <link config={{
-      link:"goohle.com",
-      attrs:{
-      text:"go google"
-      }
-    }}/>
-  
-  
+//onclick example
+const onclickExample=(
+  <div class="padding">
+    <h6>Click event</h6>
+    <button onclick={clickIt}>Click</button>
   </div>
+);
+const useOfStyle=(
+ 
+    <div class="padding">
+      <h6>Use of Style</h6>
+      <button style={{
+        width:"auto",
+        height:"40px",
+        background:"tomato",
+      }}>Button With style
+        </button>
+    </div>
+  
+);
+function link(obj){
+  return `<a class="link" href="${obj.link}">${obj.text}</a>`;
+}
+function listItem(obj){
+  return `
+  <li>
+  <div>
+  <button class="transparent circle">
+  <i>${obj.more.icon}</i>
+  </button>
+  </div>
+  <div class="max">
+  <h6 class="small">${obj.title}</h6>
+  <span>${obj.subTitle}</span>
+  </div>
+  <div></div>
+  </li>
+  `;
+}
+const useOfFunctionComp=(
+  <div class="padding">
+    <h6>Use of Function Based Component</h6>
+    <ul>
+      <li>No Nested:
+      <link config={{
+        text:"google",
+        link:"google.com"
+      }}/>
+      </li>
+    </ul>
+    <h6>Nested obj function Com</h6>
+    <ul class="list">
+      <listItem config={{
+        title:"Title",
+        subTitle:"This is subtitle",
+        more:{
+          icon:"person"
+        }
+        
+      }}/>
+    </ul>
+  </div>
+);
+const app=(
+ <div>
+   {/*use of comp_1*/}
+   <useOfComp_1/>
+   {/*use of click ex*/}
+   <onclickExample/>
+   {/* use of style*/}
+   <useOfStyle/>
+   {/*use of function based component*/}
+   <useOfFunctionComp/>
+ </div>
 );
 ```
 **Cautiou** Your function script will write user/appFunction.js

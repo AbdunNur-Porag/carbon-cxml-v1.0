@@ -1,5 +1,5 @@
 // this file use for initial launch
-render("../view/app.js", "app");
+render("../view/example.js", "app");
 /*
 setTimeout(()=>{
   render("../view/app.js","app")

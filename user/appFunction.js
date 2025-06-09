@@ -1,3 +1,3 @@
-function checkIt() {
+function clickIt() {
   alert("You clicked Check!");
 }
