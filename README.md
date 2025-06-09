@@ -1,7 +1,5 @@
 # Carbon CXML
-This is carbon cxml.A lightweight dom and obj based framework  render in xml in side js.It is near syntex to jsx.But some different between them.
-### বাংলা
-কর্বন cxml এটি কর্বনের তৈরি করা dom এবং obj কে jsx এ  render কর।
+This is carbon cxml.A lightweight dom and obj based framework  render in xml in side js.It is near syntex to jsx.But some different between them.CXML render cxml js to dom then run in browser.It is fast then react and others framework.
 # Use
 ```HTML
 <!DOCTYPE html>
