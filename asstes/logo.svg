@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+	"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg  width="163.635" height="175.151" viewBox="0 0 163.635 175.151" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  version="1.1">
+  <desc>Lekh Diagram</desc>
+  <ellipse  stroke-linecap="round"  stroke-width="2" stroke="rgb(255, 64, 8)" fill="rgb(241, 60, 8)" cx="82.0674" cy="87.3253"  rx="81.5674" ry="87.3253"/>
+  <path  stroke-linecap="round"  stroke-width="2" stroke="none" stroke-opacity="0" fill="rgb(255, 255, 255)" d=" M 23.1045,24  L 23.1045,148  L 138.067,148  L 138.067,24  L 23.1045,24 "/>
+  <path  stroke-linecap="round"  stroke-width="2" stroke="rgb(255, 64, 8)" fill="rgb(255, 65, 8)" d=" M 120.156,129.466  C 19.0419,174.651 0.5,33.1952 98.7256,30.1673  L 100.624,60.2212  C 44.7349,65.9985 52.1653,130.543 112.623,92.1382  L 130.933,80.5075  L 120.227,129.301 "/>
+  <path  stroke-linecap="round"  stroke-width="2" stroke="rgb(255, 255, 255)" fill="none" d=" M 23.1046,107.622  C 26.9025,23.9997 78.5482,87.2382 99.7556,109.41  C 126.257,148 123.516,117.817 132.87,72.4366 "/>
+  <path  stroke-linecap="round"  stroke-width="2" stroke="rgb(255, 255, 255)" fill="none" d=" M 25.5777,141.078  C 26.5151,112.848 42.8347,127.452 57.7475,125.865  C 73.3896,124.201 77.7585,113.181 82.0978,102.333 "/>
+  <path  stroke-linecap="round"  stroke-width="2" stroke="rgb(255, 255, 255)" fill="none" d=" M 44.3303,36.012  C 54.9596,57.9061 67.1938,63.3048 91.1474,51.3453  C 101.962,45.9458 115.841,47.9253 110.91,62.7186 "/>
+</svg>

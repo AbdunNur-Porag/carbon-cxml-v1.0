@@ -1,0 +1,39 @@
+const db = {
+  name: "Porag",
+  school: "XYZ",
+}
+const name = "porag"
+const info = (
+  <h1>string name:<name/></h1>
+);
+function link(obj){
+  return `<a href="${obj.link}">${obj.attrs.text}</a>`
+}
+const title = (
+  <div>
+    <h1>
+      Name:<db.name/>
+    
+    </h1>
+    <p>
+     <info/>
+    </p>
+    <p>
+      Schoold:<db.school/>
+    </p>
+   
+   <link config={{
+     link:"google.com",
+     attrs:{
+       text:"Go Google"
+     },
+   }}/>
+    
+  </div>
+);
+
+const app = (
+  <div>
+    <title/>
+  </div>
+);

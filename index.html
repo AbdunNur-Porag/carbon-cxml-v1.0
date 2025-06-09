@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#317EFB" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="CXML Framework" />
+  <meta name="description" content="CXML Framework Application" />
+  
+  <title>CXML Framework</title>
+
+  <!-- Manifest JSON -->
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- Favicon (optional) -->
+  <link rel="icon" href="icons/favicon.png" type="image/png" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/beer.css" />
+
+  <!-- Disable text selection -->
+  <style>
+    body {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      background-color: #F7F7F7;
+    }
+  </style>
+
+  <!-- Disable text/context interaction -->
+  <script>
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+    });
+    document.addEventListener('selectstart', function(e) {
+      e.preventDefault();
+    });
+    document.addEventListener('dblclick', function(e) {
+      e.preventDefault();
+    });
+  </script>
+
+  <!-- Module Scripts -->
+  <script src="css/beer.js" type="module"></script>
+</head>
+<body>
+  <div id="app"></div>
+
+  <!-- Application Scripts -->
+  <script src="js/cxml.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/carbon.utility.js"></script>
+  <script src="user/appFunction.js" defer></script>
+</body>
+</html>
